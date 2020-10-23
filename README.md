@@ -23,3 +23,22 @@ on the board.
 Run ``switch.py`` and flipping one of the four switches
 should now toggle up to four of the LEDs on the ULX3S
 board.
+
+# Serial Example
+
+Forms a serial loopback between the ULX3S and the
+host computer. You will need to plug in the ULX3S
+USB2 as well as the USB1 into the host machine for
+this to work.
+
+Once the loopback bitstream is flashed to the ULX3S,
+you should see a new ACM tty device under ``/dev`` on
+most unix machines. You can use ``screen /dev/tty.XXX``
+to connect to it.
+
+You can also flash the bitstream to the FPGA using
+``openFPGALoader -b ulx3s -f build/top.bit``.
+
+Now, you can unplug the ULX3s and only plug US2 into
+the host machine. The serial loopback should still work
+with screen.
