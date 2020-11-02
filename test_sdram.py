@@ -4,6 +4,12 @@ to the SDRAM, reads it back, and displays a byte at a time
 to the LEDs. Once the four bytes finish displaying, the state
 machine restarts by writing 0x12345678 and continues the 
 write-read-display loop.
+
+The SDRAM controller present a memory with 4-byte lines.
+0x0 and 0x4 are seperated by 4-bytes.
+The SDRAM controller presents a total of 8,388,608 lines
+or addresses.
+Thus the controller presents a total of 32MiBs in the memory.
 """
 
 from nmigen import *
