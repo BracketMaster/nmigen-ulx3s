@@ -42,3 +42,29 @@ You can also flash the bitstream to the FPGA using
 Now, you can unplug the ULX3s and only plug US2 into
 the host machine. The serial loopback should still work
 with screen.
+
+# SDRAM Example
+``python3 test_sdram.py`` programs a an example to test
+the ULX3S's SDRAM memory into the ULX3S.
+
+And nMigen wrapper around ``sdram/sdram_controller.v`` is
+provided in ``sdram_controller.py``. It should be pretty
+easy to browse ``sdram_controller.py`` and determine how
+to interface with the SDRAM. Note that the SDRAM controller
+has no burst mode support at the moment.
+
+After programming the ULX3s with ``test_sdram.py``, you 
+should be able to press the right button below the LED's
+on the ULX3s and see the values in a loop in the following
+pattern:
+
+ - 0x78
+ - 0x56
+ - 0x34
+ - 0x12
+
+The state machine in ``test_sdram.py`` writes ``0x12345678``
+to the SDRAM, reads it back, and displays a byte at a time
+to the LEDs. Once the four bytes finish displaying, the state
+machine restarts by writing 0x12345678 and continues the 
+write-read-display loop.

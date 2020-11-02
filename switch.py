@@ -1,5 +1,5 @@
 from nmigen import *
-from nmigen_boards.ulx3s import ULX3S_85F_Platform
+from maeri.gateware.platform.ulx3s.ulx3s85f import ULX3S_85F_Platform
 
 
 class Switch(Elaboratable):

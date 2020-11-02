@@ -15,4 +15,4 @@ class Blinky(Elaboratable):
 
 if __name__ == "__main__":
     platform = ULX3S_85F_Platform()
-    platform.build(Blinky(), do_program=True)
+    platform.build(Blinky(), do_program=False)
