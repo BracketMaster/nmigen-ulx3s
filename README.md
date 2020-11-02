@@ -63,7 +63,7 @@ pattern:
  - 0x34
  - 0x12
 
-The state machine below writes ``0x12345678``
+The controller writes ``0x12345678``
 to the SDRAM, reads it back, and displays a byte at a time
 to the LEDs. Once the four bytes finish displaying, the state
 machine restarts by writing 0x12345678 and continues the 
